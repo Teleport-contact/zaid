@@ -1,6 +1,6 @@
 export default function ImageGrid() {
   return (
-    <div dir="ltr" className="grid grid-cols-2 gap-4">
+    <div dir="ltr" className="grid grid-cols-2 gap-4 w-auto h-auto">
           {/* Left column: one image spanning two rows */}
           <div className="row-span-2">
             <img src="left.png" alt="Left" className="w-full h-full object-cover rounded-tl-3xl rounded-bl-3xl" />

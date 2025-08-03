@@ -3,7 +3,7 @@ import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/comp
 
 export function ProductCard({ image, title, description, href, buttonText = "Learn More" }) {
   return (
-    <Card className="w-full max-w-sm overflow-hidden border-1 border-white pb-6 pt-0">
+    <Card className="w-full md:max-w-xl max-w-sm overflow-hidden border-1 border-white pb-6 pt-0">
       <div className="relative w-full">
         <img
           src={image || "blank.png"}
@@ -13,7 +13,7 @@ export function ProductCard({ image, title, description, href, buttonText = "Lea
         />
       </div>
       <CardHeader>
-        <CardTitle className="text-center text-white">{title}</CardTitle>
+        <CardTitle className="text-center md:text-2xl text-white">{title}</CardTitle>
         <CardDescription className="line-clamp-3 text-center text-[#C8C8C8]">{description}</CardDescription>
       </CardHeader>
       <CardFooter>
