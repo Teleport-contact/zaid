@@ -71,7 +71,7 @@ export default function Home() {
               </h3>
            </div>
           </div>
-          <img src="grid.png" alt="grid" className="lg:max-h-[660px] overflow-scroll"/>
+          <img src="grid.png" alt="grid" className="max-h-[660px] object-cover overflow-scroll"/>
         </section>
         <section className="w-full h-fit flex flex-col gap-5 lg:gap-12 p-6 lg:px-16 lg:py-16">
           <div className="w-full h-fit flex flex-col gap-5 items-end">
