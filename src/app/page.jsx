@@ -1,147 +1,105 @@
-import { HamburgerButton } from "@/components/hamburger-button";
-import { Button } from "@/components/ui/button";
-import { Section } from "lucide-react";
-import { Butcherman } from "next/font/google";
-import { StatBlock } from "@/components/ui/stat-block";
-import ImageGrid from "@/components/image-grid";
-import { ProductCard } from "@/components/product-card";
-// import HamburgerSidebarDemo from "@/trash/hamburger-sidebar-demo"
+import { GallaryCard } from "@/components/gallary-card";
+import { StatBlock } from "@/components/stat-block";
 
-export default function Page() {
-  return(
+export default function Home() {
+  const statistics = [
+            { number: "25", label: "سنة من الخبرة" },
+            { number: "150", label: "منتج يلبي احتياجاتك" },
+            { number: "250", label: "تصميم مختلف يناسب ذوقك الرفيع" },
+            { number: "100", label: "زبون واثق بجودة منتجنا" }
+          ]
+
+  return (
     <>
-      {/* <header className="flex h-16 md:h-24 shrink-0 items-center justify-between border-b-3 border-black p-6">
-        <HamburgerButton/>
-        <div className="flex items-center gap-2">
-          <img src="/logo.svg" alt="logo"/>
-        </div>
-      </header> */}
-
-      <section className="space-y-6">
-        <div className="flex justify-between">
-        <div className="space-y-6 md:space-y-12 p-6 md:py-12 md:px-16">
-          <div className="flex items-center gap-4">
-            <div className="w-16 md:w-32 h-[3px] bg-[#1C1B17]"/>
-            <h1 className="md:text-xl">الجودة و الابتكار في كل قطعة</h1>
-          </div>
-              <div className="space-y-4 md:space-y-6">
-                <h2 className="text-3xl md:text-6xl font-medium">
+      <div>
+        <section className="w-full h-fit flex justify-end lg:justify-between">
+          <img src="hero.png" alt="" className="hidden lg:block max-w-3xl max-h-[600px] rounded-br-[200px]"/>
+          <div className="flex flex-col gap-6 lg:gap-12 items-end p-6 lg:px-16 lg:py-12">
+            <div className="w-full h-fit flex gap-4 justify-end items-center">
+              <h1 className="h1">الجودة و الابتكار في كل قطعة</h1>
+              <div className="w-16 lg:w-32 h-[3px] bg-black"/>
+            </div>
+            <div className="w-full h-fit flex flex-col gap-4 lg:gap-6 items-end">
+              <h2 className="h2 max-w-3xs lg:max-w-[480px]">
                 إبداع و جودة غير 
+                مسبوقة
                 <br/>
-                          مسبوقة
-                <br/>
-                في عالم التصميم   
-                </h2>
-                <h3 className="md:text-2xl font-light text-[#333333]">
+                في عالم التصميم 
+              </h2>
+              <h3 className="h3 text-[#333333] max-w-3xs lg:max-w-[520px]">
                 حيث تلتقي الأناقة بالمتانة، نضع بين
-                <br className="md:hidden"/>
                 يديك تحفا فنية
                 <br/>
                 تزين منزلك و تدوم مدى الحياة.
-                </h3>
-              </div>
-              <div className="space-x-4 space-y-1">
-                <Button className={"px-8 py-5 md:w-64 rounded-4xl border-2 bg-black text-white border-black"}>من نحن</Button>
-                <Button className={"px-8 py-5 md:w-64 rounded-4xl text-black border-2 border-black"}>تواصل معنا</Button>
-              </div>
+              </h3>
             </div>
-            <img 
-              src="hero.png" 
-              alt="" 
-              className="hidden md:block max-w-[800px] max-h-[580px] w-auto h-auto object-contain"
-              style={{ aspectRatio: 'auto' }} // This preserves the original aspect ratio
-            />
+            <div className="w-full h-fit flex gap-4">
+              <button className="w-full h-fit min-w-[148px] lg:min-w-3xs px-8 py-4 bg-transparent text-black border rounded-[99px]">تواصل معنا</button>
+              <button className="w-full h-fit min-w-[148px] lg:min-w-3xs px-8 py-4 bg-[#222222] text-white border rounded-[99px]">من نحن</button>
+            </div>
           </div>
-        <div className="space-y-5 md:flex justify-around">
-          {/* Example stats array, you can add more objects as needed */}
-          {[
-            { number: "+25", label: "سنة من الخبرة" },
-            { number: "+150", label: "منتج يلبي احتياجاتك" },
-            { number: "+250", label: "تصميم مختلف يناسب ذوقك الرفيع" },
-            { number: "+100", label: "زبون واثق بجودة منتجنا" }
-          ].map((stat, idx) => (
+        </section>
+        <section className="w-full h-fit flex flex-col lg:flex-row justify-between gap-5 items-end p-6 lg:px-16 lg:py-12">
+          {statistics.map((stat, idx) => (
             <StatBlock key={idx} number={stat.number} label={stat.label} />
           ))}
-        </div>
-      </section>
-      
-      <div className="relative bg-[#222222] space-y-12 pb-20 md:pb-52">
-        <img src="/gold_art.svg" alt="gold_art" className="w-full h-auto mt-8"/>
-        <section className="mt-8 px-6 md:px-16 space-y-6">
-        <div className="space-y-6">
-          <div className="flex items-center gap-4">
-            <div className="w-16 md:w-32 h-[3px] bg-white"/>
-            <h1 className="text-white md:text-xl">من نحن</h1>
-          </div>
-          <div className="space-y-4">
-            <h2 className="text-3xl md:text-6xl font-medium text-white">
-            رواد في صناعة 
-            <br/>
-            و تصميم أنواع
-            <br/>
-            الرخام و الغرانيت  
-            </h2>
-            <div className="md:flex space-y-5 justify-around">
-              <h3 className="md:text-2xl font-light text-[#C8C8C8]">
-              شركة زيد ، رواد في صناعة الرخام والجرانيت،
-              <br/>
-              نقدم أجود الخامات وأرقى التصاميم لتناسب
-              <br className="md:hidden"/>
-              أذواق عملائنا المميزين.
-              <br/>
-              بخبرة تمتد لأجيال، أصبحنا وجهة موثوقة
-              <br className="md:hidden"/>
-              للمشاريع الفاخرة.
-              </h3>
-              <h3 className="md:text-2xl font-light text-[#C8C8C8]">
-              حيث نحرص على الجودة، و الدقة، و الابتكار في
-              <br className="md:hidden"/>
-              كل تفصيل.
-              <br className="hidden md:block"/>
-               باستخدام أحدث التقنيات و أفضل
-              <br className="md:hidden"/>
-              أنواع الرخام والجرانيت المحلي والمستورد
-              <br/>
-              لنضمن لك جودة تدوم طويلا.
-              </h3>
-            </div>
-          </div>
-        </div>
-          <ImageGrid/>
         </section>
-        
-        <section className="px-6 space-y-6 md:space-y-12 md:pb-28">
-          <div className="flex items-center gap-4">
-            <div className="w-16 md:w-32 h-[3px] bg-white"/>
-            <h1 className="text-white md:text-xl">معرض أعمالنا</h1>
-          </div>
-          <h2 className="text-3xl md:text-6xl font-medium text-white">
-            تشكيلة متنوعة من
-            <br/>
-            التصاميم لتناسب
-            <br/>
-            جميع الأذواق  
-            </h2>
-            <div className="flex flex-col gap-5 md:flex-row md:justify-center md:gap-16">
-              <ProductCard
-                image="brick1.png"
-                title="جمال طبيعي و أناقة فاخرة"
-                description="الرخام حجر فاخر بألوان وعروق طبيعية يتميز بمظهره الفاخر وأناقته الكلاسيكية، يضفي أناقة على المساحات الداخلية."
-                buttonText="معرض الرخام"
-                href="/products/headphones"
-              />
-              <ProductCard
-                image="brick2.png"
-                title="متانة عالية و جاذبية دائمة"
-                description="الغرانيت صخر طبيعي صلب يتحمّل الاستخدام المكثف، ويتميز بعروقه وألوانه المتنوعة ومقاومته للحرارة والخدوش."
-                buttonText="معرض الغرانيت"
-                href="/products/headphones"
-              />
-            </div>
-        </section>
-        <img src="/gold_art_b.svg" alt="gold_art" className="w-full h-auto absolute -bottom-1"/>
       </div>
-
+      <div className="relative w-full h-fit flex flex-col bg-[#222222] pb-14 lg:pb-[244px]">
+        <img src="golden-art.svg" alt="" className="w-full"/>
+        <section className="w-full h-fit flex flex-col gap-5 lg:gap-12 p-6 lg:px-16 lg:py-16">
+          <div className="w-full h-fit flex flex-col gap-5 items-end">
+            <div className="w-full h-fit flex gap-4 justify-end items-center">
+              <h1 className="h1 text-white">من نحن</h1>
+              <div className="w-16 lg:w-32 h-[3px] bg-white"/>
+            </div>
+            <h2 className="h2 max-w-3xs lg:max-w-[480px] text-white">
+              رواد في صناعة
+              و تصميم أنواع   
+              الرخام و الغرانيت
+            </h2>
+            <div className="w-full h-fit flex flex-col lg:flex-row-reverse justify-between gap-5 items-end">
+              <h3 className="h3 text-[#C8C8C8] max-w-80 lg:max-w-max">
+                 شركة زيد ، رواد في صناعة الرخام والجرانيت،
+                 نقدم أجود الخامات وأرقى التصاميم لتناسب
+                 أذواق عملائنا المميزين.
+                 بخبرة تمتد لأجيال، أصبحنا وجهة موثوقة
+                 للمشاريع الفاخرة.
+              </h3>
+              <h3 className="h3 text-[#C8C8C8] max-w-80 lg:max-w-max">
+               حيث نحرص على الجودة، و الدقة، و الابتكار في كل تفصيل. باستخدام أحدث التقنيات و أفضل أنواع الرخام والجرانيت المحلي والمستورد لنضمن لك جودة تدوم طويلا.
+              </h3>
+           </div>
+          </div>
+          <img src="grid.png" alt="grid" className="lg:max-h-[660px] overflow-scroll"/>
+        </section>
+        <section className="w-full h-fit flex flex-col gap-5 lg:gap-12 p-6 lg:px-16 lg:py-16">
+          <div className="w-full h-fit flex flex-col gap-5 items-end">
+            <div className="w-full h-fit flex gap-4 justify-end items-center">
+              <h1 className="h1 text-white">معرض أعمالنا</h1>
+              <div className="w-16 lg:w-32 h-[3px] bg-white"/>
+            </div>
+            <h2 className="h2 text-white max-w-[264px] lg:max-w-[524px]">تشكيلة متنوعة من التصاميم لتناسب جميع الأذواق</h2>
+            <div className="w-full h-fit flex flex-col lg:flex-row gap-5 lg:gap-16 justify-center py-20 lg:py-12">
+              <GallaryCard
+                img={"brick1.png"}
+                title={"جمال طبيعي و أناقة فاخرة"}
+                description={"الرخام حجر فاخر بألوان وعروق طبيعية يتميز بمظهره الفاخر وأناقته الكلاسيكية، يضفي أناقة على المساحات الداخلية."}
+                btn={"معرض الرخام"}
+                link={"/gallary/brick1"}
+              />
+              <GallaryCard
+                img={"brick2.png"}
+                title={"متانة عالية و جاذبية دائمة"}
+                description={"الغرانيت صخر طبيعي صلب يتحمّل الاستخدام المكثف، ويتميز بعروقه وألوانه المتنوعة ومقاومته للحرارة والخدوش."}
+                btn={"معرض الغرانيت"}
+                link={"/gallary/brick2"}
+              />
+            </div>
+          </div>
+        </section>
+        <img src="golden-art-b.svg" alt="" className="w-full absolute -bottom-0.5"/>
+      </div>
       <footer className="flex flex-col gap-6 items-center">
         <div className="flex flex-col gap-2 items-center">
           <img src="/logo.svg" className="size-20" alt="logo"/>
@@ -151,13 +109,13 @@ export default function Page() {
           <img src="whatsapp.svg" alt="whatsapp" />
           <img src="facebook.svg" alt="facebook" />
         </div>
-        <div className="flex flex-col md:flex-row md:gap-5 items-center">
-          <a href="+963-981-848-972">963-981-848-972+</a>
-          <a href="zaid.contact@gmail.com">zaid.contact@gmail.com</a>
-          <h1 className="font-light">دمشق، زاهرة جديدة</h1>
+        <div className="flex flex-col items-center">
+          <a href="+963-981-848-972" className="ligh-font">+963-981-848-972</a>
+          <a href="zaid.contact@gmail.com " className="ligh-font">zaid.contact@gmail.com</a>
+          <h1 className="ligh-font">دمشق، زاهرة جديدة</h1>
         </div>
         © 2025 جميع الحقوق محفوظة لشركة زيد
       </footer>
-    </>
+    </>  
   );
 }

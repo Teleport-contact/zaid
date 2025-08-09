@@ -1,6 +1,21 @@
 @import "tailwindcss";
-@import "tw-animate-css";
+
 
 .readex_pro{
   font-family: var(--font-readex-pro);
+}
+.h1{
+  @apply text-base lg:text-[20px] text-right 
+}
+.h2{
+  @apply text-[32px] lg:text-[64px] font-medium text-right
+}
+.h3{
+  @apply text-base lg:text-2xl font-light text-right
+}
+.ligh-font{
+  @apply text-base font-light
+}
+.card-title-font{
+  @apply text-base lg:text-2xl font-medium text-white
 }

@@ -106,5 +106,10 @@ export default function CountUp({
     return () => unsubscribe();
   }, [springValue, separator, maxDecimals]);
 
-  return <span className={className} ref={ref} />;
+  return( 
+    <div className="flex justify-end">
+      <span className={className} ref={ref} >---</span>
+      <span className={className}>+</span>
+    </div>
+  );
 }
