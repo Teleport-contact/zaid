@@ -1,7 +1,7 @@
 export function GallaryCard({ img, title, description, btn, link}) {
   return (
     <div className="w-full h-fit flex flex-col justify-center items-center border border-[#F6F5F4] rounded-3xl">
-        <img src={img} alt="" className="w-full h-auto max-h-[500px] object-cover  rounded-t-3xl"/>
+        <img src={img} alt="" className="w-full aspect-[624px/416px] object-cover  rounded-t-3xl"/>
         <div className="w-full h-fit flex flex-col gap-4 lg:gap-9 justify-center items-center p-3 lg:p-6">
             <div className="w-full h-fit flex flex-col gap-2 justify-center items-center">
                 <h1 className="card-title-font">{title}</h1>
